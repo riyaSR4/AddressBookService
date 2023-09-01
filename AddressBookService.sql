@@ -114,15 +114,6 @@ Begin
 Select type, count(*) as count from AddressBook group by type 
 End
 
---UC11
-Create Procedure AddValues(
-@Contactid int
-@Typeid int
-)
-As
-Begin
-Insert into AddressBook values(@Contactid,@Typeid)
-End
 
 Select * from AddressBook
 
