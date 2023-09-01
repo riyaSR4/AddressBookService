@@ -37,7 +37,8 @@ namespace AddressBookService
             //operations.City("Pathanamthitta");
             //operations.State("Kerala");
             //operations.SizeByCity();
-            operations.SizeByState();
+            //operations.SizeByState();
+            operations.CountByType();
         }
     }
 }
