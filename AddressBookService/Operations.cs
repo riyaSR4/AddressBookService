@@ -345,5 +345,30 @@ namespace AddressBookService
                 con.Close();
             }
         }
+        public void UsingWithThread(List<AddressBook> list)
+        {
+            DateTime start = DateTime.Now;
+            foreach (var data in list)
+            {
+                Task thread = new Task(() =>
+                {
+                    Console.WriteLine("Being Added:" + data.FirstName);
+                    AddContact(data);
+                    Console.WriteLine("Added:" + data.FirstName);
+                });
+            }
+            DateTime end = DateTime.Now;
+            Console.WriteLine("Duration with Thread: " + (end - start));
+        }
+        public void UsingWithoutThread(List<AddressBook> list)
+        {
+            DateTime start = DateTime.Now;
+            foreach (var data in list)
+            {
+                AddContact(data);
+            }
+            DateTime end = DateTime.Now;
+            Console.WriteLine("Duration without Thread: " + (end - start));
+        }
     }
 }

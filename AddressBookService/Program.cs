@@ -1,5 +1,6 @@
 ﻿using AddressBookService;
 using System;
+using System.Collections.Generic;
 using System.Net;
 
 namespace AddressBookService
@@ -40,12 +41,70 @@ namespace AddressBookService
             //operations.SizeByState();
             //operations.CountByType();
             //operations.CreateAddPerson();
-            AddressBook contact2 = new AddressBook()
+            //AddressBook contact2 = new AddressBook()
+            //{
+            //    Id = 6,
+            //    Type = "2"
+            //};
+            //operations.AddPersonValues(contact2);
+            List<AddressBook> list = new List<AddressBook>();
+            list.Add(new AddressBook()
             {
-                Id = 6,
-                Type = "2"
-            };
-            operations.AddPersonValues(contact2);
+                FirstName = "Reji",
+                LastName = "Skaria",
+                Address = "Annikkanadu",
+                City = "Pathanamthitta",
+                State = "Kerala",
+                Zip = 123456,
+                PhoneNumber = "1023456789",
+                Email = "reji@gmail.com"
+            });
+            list.Add(new AddressBook()
+            {
+                FirstName = "Jessy",
+                LastName = "Reji",
+                Address = "Annikkanadu",
+                City = "Pathanamthitta",
+                State = "Kerala",
+                Zip = 123456,
+                PhoneNumber = "1023456789",
+                Email = "jessy@gmail.com"
+            });
+            list.Add(new AddressBook()
+            {
+                FirstName = "Rija",
+                LastName = "Reji",
+                Address = "Annikkanadu",
+                City = "Pathanamthitta",
+                State = "Kerala",
+                Zip = 123456,
+                PhoneNumber = "1023456789",
+                Email = "rija@gmail.com"
+            });
+            list.Add(new AddressBook()
+            {
+                FirstName = "Smokey",
+                LastName = "R",
+                Address = "Annikkanadu",
+                City = "Pathanamthitta",
+                State = "Kerala",
+                Zip = 123456,
+                PhoneNumber = "1023456789",
+                Email = "smokey@gmail.com"
+            });
+            list.Add(new AddressBook()
+            {
+                FirstName = "Toffee",
+                LastName = "R",
+                Address = "Annikkanadu",
+                City = "Pathanamthitta",
+                State = "Kerala",
+                Zip = 123456,
+                PhoneNumber = "1023456789",
+                Email = "toffee@gmail.com"
+            });
+            operations.UsingWithThread(list);
+            operations.UsingWithoutThread(list);
         }
     }
 }
