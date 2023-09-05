@@ -114,6 +114,15 @@ Begin
 Select type, count(*) as count from AddressBook group by type 
 End
 
+create Procedure AddMappingValues(
+@Contactid int,
+@Typeid int
+)
+As
+Begin
+Insert into AddressBookMapping values(@Contactid,@Typeid)
+End
+
 
 Select * from AddressBook
 

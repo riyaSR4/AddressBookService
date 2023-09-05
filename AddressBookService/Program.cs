@@ -38,7 +38,14 @@ namespace AddressBookService
             //operations.State("Kerala");
             //operations.SizeByCity();
             //operations.SizeByState();
-            operations.CountByType();
+            //operations.CountByType();
+            //operations.CreateAddPerson();
+            AddressBook contact2 = new AddressBook()
+            {
+                Id = 6,
+                Type = "2"
+            };
+            operations.AddPersonValues(contact2);
         }
     }
 }
